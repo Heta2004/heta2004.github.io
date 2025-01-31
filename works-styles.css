@@ -1,0 +1,875 @@
+/* General Reset */
+body, h1, h2, p, ul, li, a, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  position: relative;
+  /* height: 100vh; Full viewport height */
+  min-height: 100vh; 
+  width: 100vw; /* Full viewport width */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Ensure no margin is applied */
+  padding: 0; /* Remove padding */
+  background: #000; /* Add a fallback color */
+}
+
+#animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Match the hero-section width */
+  height: 100%; /* Match the hero-section height */
+  z-index: 1;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+#animation-container canvas {
+  width: 100%; /* Ensure the canvas stretches to fill the container */
+  height: 100%;
+  display: block; /* Remove inline spacing */
+  margin: 0;
+  padding: 0;
+  position: absolute; /* Align perfectly within the container */
+  top: 0;
+  left: 0;
+}
+
+canvas {
+  margin: 0;
+  padding: 0;
+  display: block; /* Remove potential inline spacing */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* width: 100vw;  <-- remove or comment this out */
+  width: 100%;       /* or just remove the line altogether */
+  overflow-x: hidden; /* forcibly hide horizontal scroll if you wish */
+}
+
+
+.overlay {
+  position: relative;
+  z-index: 2; /* Ensure it stays above the background */
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px; /* Adjust size to match design */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.overlay .line {
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 10px; /* Adjust spacing between the text and lines */
+}
+
+.overlay h1 span {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Portfolio Section */
+.portfolio-section-1 {
+  background-color: #1A1A1A;
+  padding: 4rem 10vw; /* Adjust padding for consistent spacing */
+  color: #eee;
+  text-align: center;
+}
+
+.portfolio-section-1 h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px; /* Larger heading size for better visibility */
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-section-1 h2::before,
+.portfolio-section-1 h2::after {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.portfolio-section-1 p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  background-color: #1A1A1A;
+  padding: 4rem 10vw;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.portfolio-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-section h2::before,
+.portfolio-section h2::after {
+  content: '';
+  display: inline-block;
+  width: 80px; /* Adjust line length */
+  height: 2px;
+  background-color: #FFFFFF; /* Line color */
+  vertical-align: middle;
+  margin: 0 15px; /* Space between text and lines */
+}
+
+
+.portfolio-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 auto 2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Portfolio Grid Wrapper */
+.portfolio-grid-wrapper {
+  background-color: #353535; /* Dark background for the grid section */
+  padding: 30px;
+  border-radius: 8px; /* Slight rounding for the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add some shadow */
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Portfolio Grid */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Set grid to 2 columns */
+  gap: 30px; /* Spacing between portfolio items */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Portfolio Items */
+.portfolio-item {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2B2B2B; /* Background for individual portfolio items */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Portfolio Item Image */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px; /* Rounded corners for the image */
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.portfolio-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Hover Overlay */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.portfolio-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hover-overlay p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+/* Modal Header */
+/* Modal General Styles */
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Modal Header */
+.modal-header {
+  width: 100%;
+  height: 70px;               /* or whatever height you need */
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;    /* <--- center everything horizontally */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  position: relative;         /* if you need the close button pinned absolutely */
+}
+
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 15px;
+  flex-wrap: wrap; /* allows them to wrap on smaller screens */
+}
+
+.title-text {
+  display: flex;              /* or block, up to you */
+  flex-direction: column;     /* one line for title, one line for subtitle */
+  text-align: center;         /* center the text itself */
+}
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.modal-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #cccccc;
+  margin: 0;
+  margin-top: 5px; /* small spacing above if you want it */
+}
+
+.arrow {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+.arrow:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Modal Grid Layout */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+/* Media Column */
+.modal-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Details Column */
+.modal-details {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-details p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.modal-details .modal-link {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.modal-details .modal-link:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+/* Hover Effect for Close Button */
+.close-button:hover {
+  color: #ff0000; /* Change the color when hovering */
+  transform: scale(1.2); /* Slightly enlarge for a dynamic effect */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+
+/* Modal Animation */
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes content-slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes content-slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply the animations */
+.modal {
+  animation: modal-fade-in 0.4s ease-out forwards;
+}
+
+.modal-media {
+  animation: content-slide-in-left 0.6s ease-out forwards;
+}
+
+.modal-details {
+  animation: content-slide-in-right 0.6s ease-out forwards;
+}
+
+body.modal-open .hamburger-btn,
+body.modal-open #header-mobile {
+  display: none !important; /* Hide hamburger & mobile menu */
+}
+
+@media (max-width: 768px) {
+
+
+  /* Hide desktop nav, show mobile nav */
+  #header-desktop {
+    display: none;
+  }
+  #header-mobile {
+    display: block;
+  }
+
+  /* Ensure the mobile header looks correct */
+  .mobile-header {
+    background-color: #353535;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .mobile-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-logo a {
+    font-family: 'BalkaraFreeCondensed', sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .hamburger-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger-btn span {
+    width: 25px;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    background-color: #353535;
+    color: #fff;
+    padding: 1rem;
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .mobile-menu ul li {
+    margin-bottom: 2rem;
+  }
+
+  .mobile-menu ul li a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  /* Footer Fix */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: -2rem;
+  }
+
+  .footer-contact {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-bottom {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* Adjust Portfolio Section */
+.portfolio-container {
+  display: flex; /* Change to flex for column layout */
+  flex-direction: column; /* Stack items vertically */
+  gap: 30px; /* Add spacing between portfolio items */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Portfolio Items */
+.portfolio-item {
+  width: 90%; /* Limit item width for a clean appearance */
+  max-width: 800px; /* Prevent items from getting too wide */
+  margin: 0 auto; /* Center items horizontally */
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2B2B2B; /* Background for individual portfolio items */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Portfolio Item Image */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px; /* Rounded corners for the image */
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.portfolio-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Hover Overlay */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.portfolio-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px; /* Adjusted size for column layout */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hover-overlay p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; /* Adjusted size for column layout */
+  font-weight: 400;
+  text-align: center;
+}
+
+.modal {
+  display: none;             /* hidden by default */
+  position: fixed;           /* fill the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  /* We want a column layout: header at top, body scrolls below */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: flex-start;
+
+  /* Allow modal description content to scroll*/
+  overflow-y: auto;          
+
+  padding: 0;
+  animation: modal-fade-in 0.4s ease-out forwards;
+}
+
+.close-button {
+  position: fixed; 
+  top: 15px;
+  right: 15px;
+  font-size: 36px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1200;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-header {
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 15px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* <-- keep them centered */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 70px; 
+  box-sizing: border-box;
+}
+
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.modal-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #cccccc;
+  margin: 0;
+}
+
+.modal-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* remove large padding-top if you don’t want it pushing content down */
+  padding-top: 0;
+}
+
+.modal-content {
+  padding: 15px;
+  max-height: calc(100vh - 100px); 
+}
+
+.modal-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: center;
+  
+}
+
+/* Ensure modal image is responsive */
+.modal-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: content-slide-in-left 0.6s ease-out forwards;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 40vh;
+  object-fit: cover;
+}
+
+.modal-details {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  flex-grow: 1;
+  animation: content-slide-in-right 0.6s ease-out forwards;
+}
+
+.modal-details p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Make modal button full width */
+.modal-details .modal-link {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+  .modal-details .modal-link:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+  }
+
+    /* Align button to the left */
+    .modal-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align left */
+    }
+
+/* Sticky behavior if desired */
+.modal-header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+.modal-title-group {
+  flex-wrap: wrap; /* So the arrows and text can move to multiple lines if too narrow */
+}
+
+.modal-title {
+  font-size: 24px;  /* Or smaller for mobile */
+}
+
+.modal-subtitle {
+ 
+  font-size: 16px;  /* Or smaller for mobile */
+}
+
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes content-slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes content-slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.portfolio-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #FFFFFF;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.portfolio-section-1 h2::before,
+.portfolio-section-1 h2::after {
+  content: '';
+  display: inline-block;
+  width: 30px; /* Reduce width to make them smaller */
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 15px; /* Slightly adjust margin for balance */
+}
+
+}
+
+

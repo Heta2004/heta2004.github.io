@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivan - Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-services.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script src="scripts.js" defer></script>
+  <script src="scripts-services.js" defer></script>
+</head>
+<body>
+  <body data-page="services"></body>
+  <header>
+    <!-- This wrapper is for your current desktop markup -->
+    <div id="header-desktop">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">ХЕТЪ</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" data-page="home">Home</a></li>
+          <li><a href="works.html" data-page="works">Works</a></li>
+          <li><a href="about.html" data-page="about">About</a></li>
+          <li><a href="services.html" data-page="services">Services</a></li>
+        </ul>      
+        <div class="nav-cta">
+          <a href="Contact.html" class="btn-primary">Contact</a>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Empty container for our mobile header injection -->
+    <div id="header-mobile"></div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div id="animation-container"></div>
+      <div class="overlay">
+        <h1>
+          <span class="line"></span>
+          SERVICES
+          <span class="line"></span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>WHAT DO I DO</h2>
+      <p>SET OF SKILLS</p>
+    </section>
+
+    <section class="services-grid">
+      <div class="service-item">
+        <img src="svg/Tech_Sound_Des.svg" alt="Technical Sound Design Icon">
+        <h3>Technical Sound Design</h3>
+        <p>Specialized in creating immersive audio experiences using middleware tools like FMOD, with a growing focus on Wwise integration. Skilled in scripting and implementing seamless sound systems to enhance interactivity and engagement in games. Proficient in refining audio systems through iterative development and collaboration, ensuring dynamic and high-quality results.</p>
+      </div>
+      <div class="service-item">
+        <img src="svg/Sound_Des.svg" alt="Sound Design Icon">
+        <h3>Sound Design</h3>
+        <p>Skilled in crafting immersive audio experiences that enhance user engagement and storytelling. Proficient in tools like Ableton Live, Adobe Audition, and the KiloHearts bundle, as well as a range of VSTs. Experienced in both linear and non-linear audio design, with expertise in foley and instrument recording to create authentic and dynamic soundscapes.</p>
+      </div>
+      <div class="service-item">
+        <img src="svg/Audio_QA.svg" alt="Audio QA Icon">
+        <h3>Audio QA</h3>
+        <p>Experienced in audio testing with a strong focus on quality assurance and detail. Skilled in using bug tracking tools like JIRA and version control systems such as Git. Proficient in critical listening, identifying subtle sound issues, and delivering clear, actionable feedback to ensure polished and immersive audio experiences.</p>
+      </div>
+      <div class="service-item">
+        <img src="svg/Game_Des.svg" alt="Game Design Icon">
+        <h3>Game Design</h3>
+        <p>Experienced in crafting engaging gameplay mechanics and systems using game engines like Unity. Skilled in creating detailed design documents, prototyping ideas, and balancing gameplay for an optimal player experience, utilizing design thinking. Adept at incorporating player feedback and analyzing user behavior to refine and enhance game designs.</p>
+      </div>
+      <div class="service-item">
+        <img src="svg/UI_UX.svg" alt="UI/UX Icon">
+        <h3>UI/UX Design</h3>
+        <p>Specialized in designing intuitive and visually compelling user interfaces that elevate user experiences. Skilled in developing wireframes, prototypes, and high-fidelity designs with tools like Figma and Adobe XD. Proficient in applying principles of gamification and behaviorism to create engaging and user-centered design solutions, continuously refined through feedback and data-driven insights.</p>
+      </div>
+      <div class="service-item">
+        <img src="svg/Data_Anal.svg" alt="Data Analysis Icon">
+        <h3>Data Analysis</h3>
+        <p>Skilled in analyzing and interpreting complex datasets to uncover meaningful insights that drive decision-making. Proficient in utilizing tools like R and Tableau to clean, process, and visualize data effectively. Adept at identifying trends and patterns, leveraging statistical methods and behavioral analysis to refine strategies and optimize outcomes.</p>
+      </div>
+    </section>   
+
+  </main>
+
+  <footer class="footer">
+    <!-- Section with #2D2D2D background -->
+    <div class="footer-top">
+      <!-- Left Section: Logo -->
+      <div class="footer-left">
+        <a href="#" class="footer-logo">ХЕТЪ</a>
+        <div class="social-icons">
+          <a href="https://linkedin.com/" target="_blank">
+            <img src="svg/LinkedIn_White.svg" alt="LinkedIn Logo" class="social-icon" />
+          </a>
+          <a href="https://github.com/" target="_blank">
+            <img src="svg/Github_White.svg" alt="GitHub Logo" class="social-icon" />
+          </a>
+          <a href="https://itch.io/" target="_blank">
+            <img src="svg/Itch_White.svg" alt="Itch.io Logo" class="social-icon" />
+          </a>
+          <a href="https://youtube.com/" target="_blank">
+            <img src="svg/Youtube_White.svg" alt="YouTube Logo" class="social-icon" />
+          </a>
+        </div>
+      </div>      
+      <!-- Center Section: Navigation -->
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <span>|</span>
+          <a href="works.html">Works</a>
+          <span>|</span>
+          <a href="about.html">About</a>
+          <span>|</span>
+          <a href="services.html">Services</a>
+        </nav>
+      </div>
+  
+      <!-- Right Section: Contact Info -->
+      <div class="footer-right">
+        <h4>Contact me</h4>
+        <div class="divider"></div>
+        <p>
+          <i class="fa fa-envelope"></i> i.k.georgiev@outlook.com<br>
+          <i class="fa fa-map-marker"></i> Based in Barcelona, Spain
+        </p>
+      </div>
+    </div>
+  
+    <!-- Section with #252525 background -->
+    <div class="footer-bottom">
+      <p>© 2025 | Ivan Georgiev | All Rights Reserved</p>
+      <a href="#" class="privacy-policy">Omnia aliena sunt</a>
+    </div>
+  </footer>
+</body>
+</html>

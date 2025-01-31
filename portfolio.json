@@ -1,0 +1,76 @@
+[
+  {
+    "id": "assassins-creed",
+    "title": "Assassin's Creed Hexe",
+    "subtitle": "Sound Redesign",
+    "image": "img/assassins-creed-hexe-detail.png",
+    "details": {
+      "portfolioPiece": "Sound Redesign Project for Assassin's Creed",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "year": 2023,
+      "skills": ["Sound Design", "Sound Implementation"],
+      "media": [
+        { "type": "image", "src": "img/assassins-creed-hexe-detail.png" },
+        { "type": "image", "src": "img/assassins-creed-hexe-detail2.png" },
+        { "type": "video", "src": "videos/assassins-creed-hexe-showcase.mp4" }
+      ],
+      "link": "https://yourprojectlink.com"
+    }
+  },
+
+  {
+    "id": "need-to-go-home",
+    "title": "Need to Go Home",
+    "subtitle": "Point and Click Game",
+    "image": "img/Insania.png",
+    "details": {
+      "portfolioPiece": "Team Project Year 1",
+      "description": "Team project focusing on sound and music for a point-and-click game.",
+      "year": 2023,
+      "skills": ["Sound Design", "Music Composition", "Teamwork"],
+      "media": [
+        { "type": "image", "src": "img/Insania.png" },
+        { "type": "image", "src": "img/need-to-go-home-detail2.png" },
+        { "type": "video", "src": "videos/need-to-go-home-gameplay.mp4" }
+      ],
+      "link": "https://yourprojectlink.com"
+    }
+  },
+
+  {
+    "id": "imitheos",
+    "title": "Imitheos",
+    "subtitle": "Sound Design",
+    "image": "img/Imitheos.png",
+    "details": {
+      "portfolioPiece": "Sound Design Project for the Game Imitheos",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "year": 2023,
+      "skills": ["Sound Design", "Sound Effects"],
+      "media": [
+        { "type": "image", "src": "img/Imitheos.png" },
+        { "type": "video", "src": "videos/imithios-showcase.mp4" }
+      ],
+      "link": "https://yourprojectlink.com"
+    }
+  },
+  
+  {
+    "id": "dads-day-out",
+    "title": "Dad's Day Out",
+    "subtitle": "Sound Redesign",
+    "image": "img/dads-day-out-detail.png",
+    "details": {
+      "portfolioPiece": "Sound Redesign for the Short Film 'Dad's Day Out'",
+      "description": "A sound redesign project for the short film 'Dad's Day Out'.",
+      "year": 2023,
+      "skills": ["Sound Design", "Dialogue Editing"],
+      "media": [
+        { "type": "image", "src": "img/dads-day-out-detail.png" },
+        { "type": "image", "src": "img/dads-day-out-detail2.png" },
+        { "type": "video", "src": "videos/dads-day-out-reel.mp4" }
+      ],
+      "link": "https://yourprojectlink.com"
+    }
+  }
+]

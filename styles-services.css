@@ -1,0 +1,221 @@
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #000;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important; /* Force remove any unwanted margins */
+}
+
+#animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh; /* Ensure it matches hero-section */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay .line {
+  display: inline-block;
+  width: 120px;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 15px;
+}
+
+.content-section {
+  padding: 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 0.5;
+  align-items: center;
+  text-align: center;
+}
+
+* Highlights Section */
+.content-section {
+  background-color: #1A1A1A;
+  height: 100vh;
+  padding: 2rem 140px;
+  color: #eee;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.content-section h2::before,
+.content-section h2::after {
+  content: '';
+  display: inline-block;
+  width: 60px; /* Adjust line length */
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px; /* Adjust spacing between lines and text */
+}
+
+.content-section h2::before {
+  margin-right: 15px;
+}
+
+.content-section h2::after {
+  margin-left: 15px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns per row */
+  gap: 2rem;
+  padding: 3rem 12vw;
+  background-color: #1A1A1A;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column; /* Stack icon, title, and text */
+  align-items: flex-start; /* Align content to the left */
+  padding: 1.5rem;
+  background-color: #2D2D2D;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item img {
+  width: 60px;
+  height: 60px;
+  /* margin-bottom: 1rem; */
+  align-self: flex-start; /* Keep the icon on the left */
+}
+
+.service-item h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.service-item p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last: left;
+  font-weight: 500;
+  color: #cccccc;
+  max-width: 19rem;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* Change to a single column */
+    padding: 2rem 3rem; /* Adjust padding for better spacing */
+  }
+
+  .service-item {
+    align-items: left; /* Center content in mobile view */
+    text-align: justify; /* Center text */
+  }
+
+  .service-item img {
+    align-self: left; /* Center images */
+    margin-bottom: 1rem; /* Add spacing below the icons */
+  }
+
+  .service-item h3 {
+    text-align: left;
+    max-width: 100%; /* Allow text to take full width */
+
+  }
+  .service-item p {
+    text-align: justify;
+    max-width: 100%; /* Allow text to take full width */
+
+  }
+
+  /* Footer Fix */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: -2rem;
+    margin-left: -1rem;
+  }
+
+  .footer-contact {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .footer-left {
+    margin-left: -5rem;
+  }
+
+  .footer-bottom {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 12px;
+  }
+}

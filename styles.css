@@ -1,0 +1,912 @@
+/* Base Styles (mobile-first) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@font-face {
+  font-family: 'BalkaraFreeCondensed';
+  src: url('fonts/BalkaraFreeCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #eee;
+  overflow-x: hidden;
+}
+
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 140px;
+  background-color: #353535;
+}
+
+.navbar .logo {
+  margin-right: auto;
+}
+
+.navbar .logo a {
+  font-family: 'BalkaraFreeCondensed', sans-serif;
+  font-size: 36px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar .logo a:hover {
+  color: #5B1515;
+}
+
+.navbar .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-grow: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #eee;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.8px;
+  background-color: #FFFFFF;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav-cta {
+  margin-left: auto;
+}
+
+.navbar .nav-cta .btn-primary {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #5B1515;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-cta .btn-primary:hover {
+  background-color: #3F0F0F;
+}
+
+
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85vh;
+  padding: 2rem 140px;
+  color: #eee;
+  text-align: left;
+}
+
+.hero-section .content {
+  max-width: 50%;
+}
+
+.hero-section .image-container {
+  max-width: 45%;
+}
+
+.hero-section .image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 12.5%;
+}
+
+.hero-section h1 {
+  margin-bottom: 2rem; /* Add extra spacing to prevent squashing */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  min-height: 90px; /* Adjust this based on the tallest text */
+}
+
+.hero-section h1 span {
+  font-size: 64px;
+  font-weight: 700;
+  display: block;
+  color: #FFFFFF;
+}
+
+.hero-section p {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 425px;
+}
+
+.hero-section a {
+  margin-right: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section .btn-secondary {
+  background-color: #5B1515;
+  color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-section .btn-secondary:hover {
+  background-color: #3F0F0F;
+}
+
+.hero-section .btn-primary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #5B1515;
+  padding: 0.5rem 1.5rem;
+}
+
+.hero-section .btn-primary:hover {
+  border-color: #3F0F0F;
+  background-color: #5B1515;
+}
+
+/* Highlights Section */
+.highlights-work {
+  background-color: #1A1A1A;
+  padding: 2rem 140px;
+  color: #eee;
+  text-align: center;
+  min-height: 100vh; /* Change from height: 100vh to min-height */
+}
+
+.highlights-work h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.highlights-work h2::before,
+.highlights-work h2::after {
+  content: '';
+  display: inline-block;
+  width: 60px; /* Adjust line length */
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px; /* Adjust spacing between lines and text */
+}
+
+.highlights-work h2::before {
+  margin-right: 15px;
+}
+
+.highlights-work h2::after {
+  margin-left: 15px;
+}
+
+
+ghts-work h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+}
+
+/* Footer Styles */
+.footer-top {
+  background-color: #2D2D2D;
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 140px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15%;
+}
+
+.footer-logo {
+  font-family: 'BalkaraFreeCondensed', sans-serif;
+  font-size: 36px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: brightness(0) saturate(100%) invert(28%) sepia(68%) saturate(527%) hue-rotate(343deg) brightness(93%) contrast(97%);
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.footer-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.8px;
+  background-color: #FFFFFF;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-right {
+  text-align: left;
+}
+
+.footer-right h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.divider {
+  width: 47%;
+  height: 2px;
+  background-color: #FFFFFF;
+  margin: 5px 0 10px;
+}
+
+
+.footer-right p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  background-color: #252525;
+  border-top: 1px solid #000000;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 140px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: #FFFFFF;
+  margin: 0;
+  text-decoration: none;
+}
+
+
+.privacy-policy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Highlights of Works */
+.highlights-work {
+  background-color: #1A1A1A;
+  padding: 2rem 140px;
+  color: #eee;
+  text-align: center;
+}
+
+.highlights-work h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.highlights-work p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.highlights-work p::before,
+/* .highlights-work p::after { - If I wanna add arrows after the type of project
+  content: '';
+  display: inline-block;
+  width: 100px;
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px;
+} */
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 35vw);
+  grid-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #353535;
+  padding: 30px;
+  width: 75vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.highlight-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Full width for mobile */
+  max-width: 600px; /* Prevent it from getting too big */
+  height: auto; /* Allow it to scale properly */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.highlight-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-item:hover {
+  transform: scale(1.05);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 5px; /* Add this line to match the corners */
+}
+
+.highlight-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.hover-overlay p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.nav-links li a.active::after {
+  transform: scaleX(1); /* Show the full strikethrough */
+}
+
+.nav-links li a.active-strikethrough,
+#mobile-menu a.active-strikethrough {
+  text-decoration: line-through; /* Add strikethrough */
+  font-weight: regular; /* Optional: Keep it bold */
+}
+
+.typed-me {
+  display: inline-block; /* Keeps it inline but ensures consistent height */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px; /* Match your desired font size */
+  font-weight: 600;
+  color: #cccccc;
+  border-right: 2px solid #5B1515; /* Add cursor effect */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide text overflow */
+  min-height: 1.2em; /* Reserve enough height for the tallest text */
+  line-height: 1.2;
+}
+
+
+@keyframes blink-cursor {
+  from {
+    border-right-color: #5B1515;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Hide #header-mobile by default; we’ll show it on small screens in JS. */
+#header-mobile {
+  display: none; /* Just so it won't appear if JS is disabled, optionally. */
+}
+
+/* Basic mobile header container */
+.mobile-header {
+  background-color: #353535; /* or #353535, per your theme */
+  color: #111;
+  padding: 1rem;
+}
+
+/* Top row: logo + hamburger */
+.mobile-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-logo a {
+  font-family: 'BalkaraFreeCondensed', sans-serif;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0rem 1rem;
+}
+
+/* Simple hamburger (3 lines) */
+.hamburger-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100; /* Ensure it stays above other elements */
+}
+
+.hamburger-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: #FFFFFF; /* Adjust color based on your theme */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transform hamburger into "X" */
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* The menu that slides down or overlays */
+.mobile-menu {
+  position: relative; 
+  background-color: #353535; /* or #353535, etc. */
+  color: #000;
+  padding: 1rem;
+  display: none; /* hidden by default */
+}
+.mobile-menu.open {
+  display: block; /* show it */
+}
+
+/* Mobile nav links */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.mobile-menu ul li {
+  margin-bottom: 2rem;
+}
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #ffffff; /* or #eee if dark background */
+}
+
+/* The contact button at the bottom of the menu */
+.mobile-contact {
+  margin-top: 2rem;
+}
+.mobile-contact .btn-primary {
+  /* match your main button style or adapt it */
+  background-color: #5B1515;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+}
+
+/* Highlight the active link in the mobile menu with bold text */
+.mobile-menu ul li a.active {
+  font-weight: bold; /* Make the text bold */
+  color: #FFFFFF; /* Optional: Keep the text color the same */
+  text-decoration: none; /* Ensure there's no underline */
+}
+
+
+
+
+/* Media Query to hide desktop nav on small screens 
+   (and show #header-mobile if you want). */
+@media (max-width: 768px) {
+  #header-desktop {
+    display: none; /* hide the original nav on mobile */
+  }
+  #header-mobile {
+    display: block;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align all items to the left */
+    justify-content: flex-start; /* Align content to the top */
+    margin: 0rem 1rem;
+    text-align: left; /* Ensure text alignment is left */
+    padding: 20px;
+    height: 100vh;
+    background-color: #111;
+    width: 100%; /* Ensure the section spans full width */
+  }
+
+  .hero-section .content {
+    width: 100%; /* Allow full width for its children */
+  }
+  /* Align the profile picture to the left */
+  .hero-section .image-container {
+    margin: 0 0 2rem 5rem; /* Add bottom spacing */
+    align-self: flex-start; /* Ensure the image is aligned to the left */
+  }
+
+  .hero-section .image-container img {
+    width: 15rem; /* Smaller size for mobile */
+    height: 15rem;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 3px solid #5B1515; /* Add a border to the image */
+  }
+
+  /* Style the name */
+  .hero-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #fff;
+  }
+
+  /* Style the typing effect */
+  .hero-section h2 {
+    font-size: 10px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  .typed-me {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ccc;
+  }
+
+.hero-section p {
+  font-family: 'Montserrat', sans-serif;
+  color: #dddddd;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 150%; /* Ensure the paragraph takes up the full width of the parent */
+  max-width: none; /* Remove any width restriction */
+}
+
+  /* Buttons for About Me and Contact */
+  .hero-section .btn-secondary,
+  .hero-section .btn-primary {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 5px 0; /* Add vertical spacing between buttons */
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    align-self: flex-start; /* Align buttons to the left */
+  }
+
+  .btn-secondary {
+    background-color: #5B1515;
+    color: #fff;
+  }
+
+  .btn-primary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #5B1515;
+  }
+
+  .btn-secondary:hover,
+  .btn-primary:hover {
+    background-color: #3F0F0F;
+    border-color: #3F0F0F;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'BalkaraFreeCondensed', sans-serif;
+    font-size: 56px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 1rem; /* Space below the logo */
+  }
+
+  .social-icons {
+    display: flex; /* Arrange icons in a row */
+    justify-content: center; /* Center-align icons */
+    gap: 15px; /* Spacing between icons */
+    width: 100%; /* Full-width alignment */
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: -2rem;
+  }
+
+  .footer-nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 0 5px; /* Padding around links */
+  }
+
+  .footer-contact {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-contact h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem; /* Space below the heading */
+  }
+
+  .footer-contact .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #5B1515;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem; /* Button padding */
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center-align text */
+    display: inline-block;
+  }
+
+  .footer-contact .btn-primary:hover {
+    background-color: #3F0F0F; /* Darker hover effect */
+  }
+
+
+  .footer-bottom {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    color: #FFFFFF;
+    text-align: left;
+    flex: 1;
+  }
+  
+  .footer-bottom a {
+    margin: 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: right;
+    flex: 1;
+  }
+  
+  /* Optional hover effect for the link */
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+
+  .highlights-grid {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #353535;
+    padding: 30px;
+    width: 80vw; /* Make the grid take up 90% of the viewport width */
+    max-width: 500px; /* Prevent it from getting too wide */
+    margin: 0 auto; /* Center it horizontally */
+    box-sizing: border-box;
+  }
+
+  .highlight-item {
+    width: 100%;
+    max-width: 400px; /* Ensure items don't stretch too much */
+    box-sizing: border-box;
+  }
+
+  .highlight-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .highlights-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the entire section */
+    width: 100vw;
+    padding: 2rem 0; /* Ensure enough spacing around */
+  }
+
+
+  .highlights-work h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlights-work p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #FFFFFF;
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+  
+  .highlights-work h2::before,
+.highlights-work h2::after {
+  content: '';
+  display: inline-block;
+  width: 40px; /* Adjust line length */
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px; /* Adjust spacing between lines and text */
+}
+
+  html, body {
+    overflow-x: hidden; /* Hides any horizontal scrolling */
+    width: 100vw; /* Ensures full viewport width */
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Ensure the desktop nav remains as-is on bigger screens */
+@media (min-width: 769px) {
+  #header-mobile {
+    display: none; /* hide the mobile header on desktop */
+  }
+}
