@@ -663,9 +663,9 @@ body.modal-open #header-mobile {
 }
 
 .close-button {
-  position: fixed; 
-  top: 25px;
+  position: fixed;
   right: 15px;
+  top: -5px;
   font-size: 36px;
   color: #ffffff;
   cursor: pointer;
