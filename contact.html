@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get in Touch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-contact.css">
+  <script src="scripts.js" defer></script>
+  <script src="scripts-contact.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+  <body data-page="contact"></body>
+  <header>
+    <!-- This wrapper is for your current desktop markup -->
+    <div id="header-desktop">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">ХЕТЪ</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" data-page="home">Home</a></li>
+          <li><a href="works.html" data-page="works">Works</a></li>
+          <li><a href="about.html" data-page="about">About</a></li>
+          <li><a href="services.html" data-page="services">Services</a></li>
+        </ul>      
+        <div class="nav-cta">
+          <a href="contact.html" class="btn-primary">Contact</a>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Empty container for our mobile header injection -->
+    <div id="header-mobile"></div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="overlay">
+        <h1>
+          <span class="line"></span>
+          GET IN TOUCH
+          <span class="line"></span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="form-container">
+        <!-- Intro Section: Profile Picture and Text -->
+        <div class="intro-container">
+          <!-- Profile Picture -->
+          <img src="img/LinkedIn_Profile_Picture.png" alt="Profile Picture" class="profile-pic" />
+    
+          <!-- Intro Text -->
+          <div class="contact-intro">
+            <p>
+              Use the form to get in touch, I'm always available to talk about work or simply to chat.
+              Leave me a message here or contact me through my e-mail. Let's have a chat and see how I
+              can help you and your team achieve your creative vision!
+            </p>
+          </div>
+        </div>
+    
+        <!-- Contact Form -->
+        <form class="contact-form" action="80ae45aea18d8f920de7c9f2324109c6" method="POST">
+          <!-- Hidden fields for customization -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          
+          <!-- Contact fields -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">NAME</label>
+              <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-MAIL</label>
+              <input type="email" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">PHONE</label>
+              <input type="tel" id="phone" name="phone" placeholder="Phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" rows="8" placeholder="Talk about your project. Any requirements, ideas, goals, or examples to get the discussion started." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        </form>              
+      </div>
+    </section>        
+  </main>
+
+  <footer class="footer">
+    <!-- Section with #2D2D2D background -->
+    <div class="footer-top">
+      <!-- Left Section: Logo -->
+      <div class="footer-left">
+        <a href="#" class="footer-logo">ХЕТЪ</a>
+        <div class="social-icons">
+          <a href="https://linkedin.com/" target="_blank">
+            <img src="svg/LinkedIn_White.svg" alt="LinkedIn Logo" class="social-icon" />
+          </a>
+          <a href="https://github.com/" target="_blank">
+            <img src="svg/Github_White.svg" alt="GitHub Logo" class="social-icon" />
+          </a>
+          <a href="https://itch.io/" target="_blank">
+            <img src="svg/Itch_White.svg" alt="Itch.io Logo" class="social-icon" />
+          </a>
+          <a href="https://youtube.com/" target="_blank">
+            <img src="svg/Youtube_White.svg" alt="YouTube Logo" class="social-icon" />
+          </a>
+        </div>
+      </div>      
+      <!-- Center Section: Navigation -->
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <span>|</span>
+          <a href="works.html">Works</a>
+          <span>|</span>
+          <a href="about.html">About</a>
+          <span>|</span>
+          <a href="services.html">Services</a>
+        </nav>
+      </div>
+  
+      <!-- Right Section: Contact Info -->
+      <div class="footer-right">
+        <h4>Contact me</h4>
+        <div class="divider"></div>
+        <p>
+          <i class="fa fa-envelope"></i> i.k.georgiev@outlook.com<br>
+          <i class="fa fa-map-marker"></i> Based in Barcelona, Spain
+        </p>
+      </div>
+    </div>
+  
+    <!-- Section with #252525 background -->
+    <div class="footer-bottom">
+      <p>© 2025 | Ivan Georgiev | All Rights Reserved</p>
+      <a href="#" class="privacy-policy">Omnia aliena sunt</a>
+    </div>
+  </footer>
+</body>
+</html>
