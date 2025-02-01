@@ -59,29 +59,27 @@
     </section>   
     
     <div id="modal" class="modal">
-   
-      
       <!-- Modal Header -->
       <div class="modal-header">
         <span class="close-button" onclick="closeModal()">×</span>
         <div class="modal-title-group">
           <span class="arrow left-arrow" onclick="navigateModal('prev')">&#10094;</span>
-          
           <div class="title-text">
             <h2 class="modal-title">TITLE</h2>
             <h3 class="modal-subtitle">SUBTITLE</h3>
           </div>
-          
           <span class="arrow right-arrow" onclick="navigateModal('next')">&#10095;</span>
         </div>
       </div>
       
-    
       <!-- Modal Grid -->
       <div class="modal-grid">
-        <!-- Left Column: Media -->
-        <div class="modal-media">
-          <img class="modal-image" src="" alt="Modal Image">
+        <!-- Left Column: Media + Dots -->
+        <div class="modal-left">
+          <div class="modal-media">
+            <img class="modal-image" src="" alt="Modal Image">
+          </div>
+          <!-- Dots container will be dynamically inserted here -->
         </div>
         <!-- Right Column: Details -->
         <div class="modal-details">
@@ -92,6 +90,7 @@
           <p class="modal-description"></p>
         </div>
       </div>
+    </div>
     </div>
     
   </main>

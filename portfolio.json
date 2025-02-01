@@ -11,8 +11,9 @@
       "skills": ["Sound Design", "Sound Implementation"],
       "media": [
         { "type": "image", "src": "img/assassins-creed-hexe-detail.png" },
-        { "type": "image", "src": "img/assassins-creed-hexe-detail2.png" },
-        { "type": "video", "src": "videos/assassins-creed-hexe-showcase.mp4" }
+        { "type": "video", "src": "https://www.youtube.com/watch?v=A-UOb-lVR-M"},
+        { "type": "image", "src": "img/assassins-creed-hexe-detail.png" },
+        { "type": "image", "src": "img/assassins-creed-hexe-detail2.png" }
       ],
       "link": "https://yourprojectlink.com"
     }
