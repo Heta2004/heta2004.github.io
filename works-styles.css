@@ -851,13 +851,29 @@ body.modal-open #header-mobile {
 .portfolio-section-1 h2::after {
   content: '';
   display: inline-block;
-  width: 30px; /* Reduce width to make them smaller */
+  width: 15px; /* Reduce width to make them smaller */
   height: 2px;
   background-color: #FFFFFF;
   vertical-align: middle;
   margin: 0 15px; /* Slightly adjust margin for balance */
 }
+.portfolio-section-1 h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px; /* Adjust size for better visibility */
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 
 }
 
+.portfolio-section-1 p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
 
+}
