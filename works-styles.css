@@ -293,12 +293,10 @@ body.modal-open {
 /* Modal Header */
 .modal-header {
   width: 100%;
-  height: 70px;               /* or whatever height you need */
-  background: rgba(0, 0, 0, 0.95);
+  height: 10rem;               /* or whatever height you need */
   display: flex;
   align-items: center;
   justify-content: center;    /* <--- center everything horizontally */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
   position: relative;         /* if you need the close button pinned absolutely */
 }
@@ -663,9 +661,10 @@ body.modal-open #header-mobile {
 }
 
 .close-button {
-  position: fixed;
+  margin-top: -20px;  /* pulls the button upward */
+  position: absolute;
   right: 15px;
-  top: -5px;
+  /* top: -5px; */
   font-size: 36px;
   color: #ffffff;
   cursor: pointer;
@@ -676,13 +675,11 @@ body.modal-open #header-mobile {
 .modal-header {
   position: relative;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
   padding: 15px;
   z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: center; /* <-- keep them centered */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   height: 70px; 
   box-sizing: border-box;
 }
