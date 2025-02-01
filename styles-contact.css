@@ -216,33 +216,4 @@ label[for="message"]::after {
     width: 30px; /* Shorten line for mobile */
     margin: 15px;
   }
-  /* Footer Fix */
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .footer-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 16px;
-    margin-top: -2rem;
-    margin-left: -1rem;
-  }
-
-  .footer-contact {
-    text-align: center;
-    margin-top: 1rem;
-  }
-  .footer-left {
-    margin-left: -5rem;
-  }
-
-  .footer-bottom {
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 12px;
-  }
 }

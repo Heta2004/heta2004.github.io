@@ -473,8 +473,8 @@ body.modal-open #header-mobile {
 
 /* Individual dots */
 .dot {
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
@@ -507,6 +507,8 @@ body.modal-open #header-mobile {
   border-radius: 10px;
   object-fit: cover;
 }
+
+
 
 @media (max-width: 768px) {
 
@@ -582,32 +584,6 @@ body.modal-open #header-mobile {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #ffffff;
-  }
-
-  /* Footer Fix */
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .footer-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 16px;
-    margin-top: -2rem;
-  }
-
-  .footer-contact {
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .footer-bottom {
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 12px;
   }
 
   /* Adjust Portfolio Section */
@@ -960,7 +936,4 @@ body.modal-open #header-mobile {
   border-radius: 10px;
   object-fit: cover;
 }
-
-
-
 }
