@@ -661,7 +661,7 @@ body.modal-open #header-mobile {
 }
 
 .close-button {
-  margin-top: -20px;  /* pulls the button upward */
+  margin-top: -15px;  /* pulls the button upward */
   position: absolute;
   right: 15px;
   /* top: -5px; */
@@ -792,15 +792,6 @@ body.modal-open #header-mobile {
 
 .modal-title-group {
   flex-wrap: wrap; /* So the arrows and text can move to multiple lines if too narrow */
-}
-
-.modal-title {
-  font-size: 24px;  /* Or smaller for mobile */
-}
-
-.modal-subtitle {
- 
-  font-size: 16px;  /* Or smaller for mobile */
 }
 
 
