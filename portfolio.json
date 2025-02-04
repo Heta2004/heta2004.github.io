@@ -6,72 +6,79 @@
     "image": "img/assassins-creed-hexe-detail.png",
     "details": {
       "portfolioPiece": "Sound Redesign Project for Assassin's Creed",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "description": "A sound redesign of the Assassin’s Creed Codename Hexe trailer, focused on creating an immersive, atmospheric soundscape that supports the trailer’s dark, eerie aesthetic. The goal was to tell a story through sound, using audio to evoke emotion, build tension, and enhance the narrative.\n\nOriginal audio elements were crafted from scratch through a blend of foley recording with a personal microphone setup and sound synthesis using various VST plugins. Novum and IZotope played a key role in shaping ambient textures and haunting atmospheres. The main challenge was achieving rich, layered sounds under tight time constraints, solved through iterative design and targeted feedback.",
       "year": 2023,
-      "skills": ["Sound Design", "Sound Implementation"],
+      "skills": ["Foley", "Sound Design", "Mixing", "Ableton Live 12", "Adobe Audition", "Spectrasonics Bundle", "iZotope", "Novum"],
       "media": [
+        { "type": "video", "src": "https://www.youtube.com/embed/A-UOb-lVR-M?start=30" },
         { "type": "image", "src": "img/assassins-creed-hexe-detail.png" },
-        { "type": "video", "src": "https://www.youtube.com/watch?v=A-UOb-lVR-M"},
-        { "type": "image", "src": "img/assassins-creed-hexe-detail.png" },
-        { "type": "image", "src": "img/assassins-creed-hexe-detail2.png" }
+        { "type": "image", "src": "img/assassins-creed-hexe-foley.jpg" }
       ],
-      "link": "https://yourprojectlink.com"
+      "link": "https://www.youtube.com/watch?v=A-UOb-lVR-M&t=30s"
     }
   },
 
   {
-    "id": "need-to-go-home",
-    "title": "Need to Go Home",
+    "id": "insania",
+    "title": "Insania",
     "subtitle": "Point and Click Game",
-    "image": "img/Insania.png",
+    "image": "img/Thumbnail_First.png",
     "details": {
-      "portfolioPiece": "Team Project Year 1",
-      "description": "Team project focusing on sound and music for a point-and-click game.",
-      "year": 2023,
-      "skills": ["Sound Design", "Music Composition", "Teamwork"],
+      "portfolioPiece": "Point-and-Click Psychological Horror Game",
+      "description": "Insania is a point-and-click psychological horror game that explores the fragile boundary between reality and delusion. The story follows Dr. James Cawley, a man confronting his crumbling sanity as he searches for a way home, only to uncover dark truths about his past, including the tragic loss of his daughter, Lily, and the blurred reality shaped by his own mind.\n\nDeveloped with a team of six, the game features a sanity mechanic where player interactions trigger auditory and visual hallucinations, intensifying the psychological tension. Original audio was crafted using Ableton Live 11 and Adobe Audition, focusing on layered sounds—from distorted environmental effects to disorienting whispers.\n\nKey contributions include designing immersive sound effects, shaping the core game mechanics, and co-creating the narrative structure. The result is a compelling, story-driven experience that pulls players deep into the fractured reality of the protagonist’s mind.",
+      "year": 2022,
+      "skills": ["Sound Design", "Narrative Design", "Game Design", "Trello", "GitHub", "Ableton Live 11", "Adobe Audition"],
       "media": [
-        { "type": "image", "src": "img/Insania.png" },
-        { "type": "image", "src": "img/need-to-go-home-detail2.png" },
-        { "type": "video", "src": "videos/need-to-go-home-gameplay.mp4" }
+        { "type": "video", "src": "https://www.dailymotion.com/video/k4RvBTfgwn3DE7CmrGw" },
+        { "type": "video", "src": "https://www.dailymotion.com/video/k3DGPuAmjAQRUjCmqpm" },
+        { "type": "image", "src": "img/Insania_Cut_Video_Afk.gif" },
+        { "type": "image", "src": "img/Insania_Screen_Design_Document.jpg" },
+        { "type": "image", "src": "img/Insania_Room_Layout.jpg" }
       ],
-      "link": "https://yourprojectlink.com"
+      "link": "https://www.dailymotion.com/video/k4RvBTfgwn3DE7CmrGw"
     }
   },
 
   {
-    "id": "imitheos",
-    "title": "Imitheos",
-    "subtitle": "Sound Design",
-    "image": "img/Imitheos.png",
+    "id": "iceage",
+    "title": "IceAge",
+    "subtitle": "2.5D Platformer",
+    "image": "img/IceAge_Thumbnail.png",
     "details": {
-      "portfolioPiece": "Sound Design Project for the Game Imitheos",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "year": 2023,
-      "skills": ["Sound Design", "Sound Effects"],
+      "portfolioPiece": "2.5D Platformer Game",
+      "description": "IceAge is a 2.5D platformer blending 2D characters with a 3D environment, created for <a href='https://themonsterproject.org/faq' target='_blank' style='color:#FF0000;'>The Monster Project</a>. The game follows IceAge, a frost fairy on a quest to reclaim stolen ice crystals and save her transformed ice sparks from a vengeful fire demon.\n\nDeveloped with a team of six, the project involved collaboration with <a href='https://www.concordia.nl/' target='_blank' style='color:#FF0000;'>Concordia Enschede</a> and <a href='https://internationalschooltwente.nl/' target='_blank' style='color:#FF0000;'>International School Twente</a>, with a final showcase presented to the children who inspired the game’s monsters. My key roles included leading the team through task management, planning, and execution, as well as UI design, sound effects, and gameplay mechanics. I also focused on game testing and iterative design to refine puzzle-solving, companion-based gameplay, and dynamic environments.",
+      "year": 2024,
+      "skills": ["Sound Design", "Narrative Design", "Game Design", "Trello", "GitHub", "Unity"],
       "media": [
-        { "type": "image", "src": "img/Imitheos.png" },
-        { "type": "video", "src": "videos/imithios-showcase.mp4" }
+        { "type": "video", "src": "https://www.dailymotion.com/video/k5YceHHsLg8ni3Cmtso" },
+        { "type": "image", "src": "img/iceage-stickers.gif" },
+        { "type": "image", "src": "img/IceAge_Asset_List.png" },
+        { "type": "image", "src": "img/Footsteps.png" },
+        { "type": "image", "src": "img/Wind_Generator_PhasePlant.png" }
       ],
-      "link": "https://yourprojectlink.com"
+      "link": "https://github.com/Kirserd/Saxion-CMGT-Project-Show-Off-2024"
     }
   },
   
   {
     "id": "dads-day-out",
-    "title": "Dad's Day Out",
-    "subtitle": "Sound Redesign",
-    "image": "img/dads-day-out-detail.png",
+    "title": "Dad’s Day Out",
+    "subtitle": "Serious Game",
+    "image": "img/dads-day-out-thumbnail.png",
     "details": {
-      "portfolioPiece": "Sound Redesign for the Short Film 'Dad's Day Out'",
-      "description": "A sound redesign project for the short film 'Dad's Day Out'.",
+      "portfolioPiece": "Serious Game",
+      "description": "Dad’s Day Out is a serious game that explores the challenges and nuances of modern parenting. The player steps into the role of a father navigating daily life, balancing work responsibilities with the emotional and developmental needs of his child. The game’s core objective is to reflect on parenting styles, with outcomes influenced by the player's in-game decisions and time management.\n\nDeveloped with a team of six, the game features an isometric 3D environment where players move through the house, completing various tasks. Each household chore is designed as a unique 2D mini-game, ranging from watering plants to drawing with the child, emphasizing the contrast between routine responsibilities and quality bonding moments. The game’s economy system analyzes player behavior to determine their parenting style, offering insightful feedback based on choices made.\n\nKey contributions include sound design, gameplay mechanics, and shaping the overall game experience to foster reflection on parent-child dynamics.",
       "year": 2023,
-      "skills": ["Sound Design", "Dialogue Editing"],
+      "skills": ["Sound Design", "Game Design"],
       "media": [
-        { "type": "image", "src": "img/dads-day-out-detail.png" },
-        { "type": "image", "src": "img/dads-day-out-detail2.png" },
-        { "type": "video", "src": "videos/dads-day-out-reel.mp4" }
+        { "type": "video", "src": "https://www.dailymotion.com/video/kifXWcG8k2ThKDCmuaE" },
+        { "type": "image", "src": "img/dads-day-out-room.png" },
+        { "type": "image", "src": "img/dads-day-out-flower.png" },
+        { "type": "image", "src": "img/dads-day-out-draw.png" },
+        { "type": "image", "src": "img/dads-day-out-game.png" }
       ],
-      "link": "https://yourprojectlink.com"
+      "link": "https://www.dailymotion.com/video/kifXWcG8k2ThKDCmuaE"
     }
-  }
+  }  
 ]
+

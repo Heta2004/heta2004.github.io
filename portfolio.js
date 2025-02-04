@@ -24,6 +24,12 @@ function loadMedia(mediaIndex, item) {
       // Convert typical YouTube URL to embed URL
       embedUrl = embedUrl.replace("watch?v=", "embed/");
     }
+
+       // Handle Dailymotion links
+    if (embedUrl.includes("dailymotion.com/video/")) {
+      embedUrl = embedUrl.replace("/video/", "/embed/video/");
+    }
+    
     const iframe = document.createElement("iframe");
     iframe.src = embedUrl;
     iframe.width = "560";
@@ -105,7 +111,7 @@ function openModal(index) {
   modalYear.textContent = item.details.year;
   modalSkills.textContent = item.details.skills.join(", ");
   modalLink.href = item.details.link;
-  modalDescription.textContent = item.details.description;
+  modalDescription.innerHTML = item.details.description.replace(/\n\n/g, '<br><br>');
 
   // Display modal with animation
   modal.style.display = "flex";
