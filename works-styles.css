@@ -510,6 +510,43 @@ body.modal-open #header-mobile {
   object-fit: cover;
 }
 
+/* --- Portfolio Section 2 (Desktop) --- */
+.portfolio-section-2 {
+  background-color: #252525;
+  padding: 4rem 10vw;
+  color: #eee;
+  text-align: center;
+}
+
+.portfolio-section-2 h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio-section-2 h2::before,
+.portfolio-section-2 h2::after {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.portfolio-section-2 p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
+
 
 
 @media (max-width: 768px) {
@@ -940,6 +977,26 @@ body.modal-open #header-mobile {
   border-radius: 10px;
   object-fit: cover;
   overflow: hidden;
+}
+
+.portfolio-section-2 {
+  padding: 2rem 5vw;
+}
+
+.portfolio-section-2 h2 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-section-2 h2::before,
+.portfolio-section-2 h2::after {
+  width: 40px;
+  margin: 0 5px;
+}
+
+.portfolio-section-2 p {
+  font-size: 18px;
+  margin-bottom: 1rem;
 }
 
 }

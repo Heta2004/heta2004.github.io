@@ -1,8 +1,9 @@
 let currentIndex = 0;
 let currentMediaIndex = 0; // New variable to track which media item is active within a portfolio item
-let portfolioData = [];
+let portfolioData = []; // Full data from the JSON
+let currentPortfolioGroup = []; // Holds the currently active group for modal navigation
 
-/* --- New Helper Functions for Dot Navigation --- */
+/* --- Helper Functions for Dot Navigation --- */
 
 // Loads a media item (image or video) from the current portfolio item at the given media index.
 function loadMedia(mediaIndex, item) {
@@ -24,12 +25,10 @@ function loadMedia(mediaIndex, item) {
       // Convert typical YouTube URL to embed URL
       embedUrl = embedUrl.replace("watch?v=", "embed/");
     }
-
-       // Handle Dailymotion links
+    // Handle Dailymotion links
     if (embedUrl.includes("dailymotion.com/video/")) {
       embedUrl = embedUrl.replace("/video/", "/embed/video/");
     }
-    
     const iframe = document.createElement("iframe");
     iframe.src = embedUrl;
     iframe.width = "560";
@@ -83,19 +82,25 @@ function updateDots(item) {
   });
 }
 
-/* --- End of New Helper Functions --- */
+/* --- End of Dot Navigation Helpers --- */
 
-// Function to open the modal
-function openModal(index) {
+// Modified openModal to accept an optional group parameter.
+// If a group is passed, it uses that group for modal navigation; otherwise, it uses the full portfolioData.
+function openModal(index, group) {
+  if (group) {
+    currentPortfolioGroup = group;
+  } else {
+    currentPortfolioGroup = portfolioData;
+  }
   currentIndex = index;
-  const item = portfolioData[currentIndex];
+  const item = currentPortfolioGroup[currentIndex];
 
   // Reset media index to 0 when opening a new modal and load the first media item.
   currentMediaIndex = 0;
   loadMedia(currentMediaIndex, item);
   createDots(item);
 
-  // Update the rest of the modal details
+  // Update the rest of the modal details.
   const modalTitle = document.querySelector(".modal-title");
   const modalSubtitle = document.querySelector(".modal-subtitle");
   const modalPiece = document.querySelector(".modal-piece");
@@ -113,43 +118,48 @@ function openModal(index) {
   modalLink.href = item.details.link;
   modalDescription.innerHTML = item.details.description.replace(/\n\n/g, '<br><br>');
 
-  // Display modal with animation
+  // Display modal with animation.
   modal.style.display = "flex";
   modal.classList.remove("modal-fade-in");
   void modal.offsetWidth; // Trigger reflow to restart animation
   modal.classList.add("modal-fade-in");
 
-  // Prevent scrolling
+  // Prevent scrolling.
   document.body.classList.add("modal-open");
 }
 
-// Function to close the modal
+// Function to close the modal.
 function closeModal() {
   document.getElementById("modal").style.display = "none";
   document.body.classList.remove("modal-open"); // Enable scrolling
 }
 
-// Function to navigate the modal (switching entire portfolio items)
+// Modified navigateModal to use currentPortfolioGroup.
 function navigateModal(direction) {
   if (direction === "next") {
-    currentIndex = (currentIndex + 1) % portfolioData.length;
+    currentIndex = (currentIndex + 1) % currentPortfolioGroup.length;
   } else if (direction === "prev") {
-    currentIndex = (currentIndex - 1 + portfolioData.length) % portfolioData.length;
+    currentIndex = (currentIndex - 1 + currentPortfolioGroup.length) % currentPortfolioGroup.length;
   }
-  openModal(currentIndex);
+  openModal(currentIndex, currentPortfolioGroup);
 }
 
-// Initialize portfolio and modal
+// Initialize portfolio and modal.
 document.addEventListener("DOMContentLoaded", () => {
   fetch("portfolio.json")
     .then((response) => response.json())
     .then((data) => {
       portfolioData = data;
-      const portfolioContainer = document.querySelector(".portfolio-container");
-      portfolioContainer.innerHTML = ""; // Clear existing items
 
-      // Render portfolio items
-      portfolioData.forEach((item, index) => {
+      // Separate items based on their "section" property.
+      // Items with "section": "section" go to the first group; items with "section": "section2" go to the second.
+      const group1 = data.filter(item => item.section === "section");
+      const group2 = data.filter(item => item.section === "section2");
+
+      // Render group1 into the first portfolio container.
+      const container1 = document.querySelector(".portfolio-section-1 .portfolio-container");
+      container1.innerHTML = ""; // Clear existing items.
+      group1.forEach((item, index) => {
         const portfolioItem = document.createElement("div");
         portfolioItem.classList.add("portfolio-item");
         portfolioItem.innerHTML = `
@@ -159,23 +169,41 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${item.subtitle}</p>
           </div>
         `;
-        portfolioItem.addEventListener("click", () => openModal(index)); // Open modal on click
-        portfolioContainer.appendChild(portfolioItem);
+        // When clicked, open the modal with the group1 array.
+        portfolioItem.addEventListener("click", () => openModal(index, group1));
+        container1.appendChild(portfolioItem);
+      });
+
+      // Render group2 into the second portfolio container.
+      const container2 = document.querySelector(".portfolio-section-2 .portfolio-container");
+      container2.innerHTML = ""; // Clear existing items.
+      group2.forEach((item, index) => {
+        const portfolioItem = document.createElement("div");
+        portfolioItem.classList.add("portfolio-item");
+        portfolioItem.innerHTML = `
+          <img src="${item.image}" alt="${item.title}">
+          <div class="hover-overlay">
+            <h3>${item.title}</h3>
+            <p>${item.subtitle}</p>
+          </div>
+        `;
+        // When clicked, open the modal with the group2 array.
+        portfolioItem.addEventListener("click", () => openModal(index, group2));
+        container2.appendChild(portfolioItem);
       });
     })
     .catch((error) => console.error("Error loading portfolio data:", error));
 });
 
-// Ensure modal doesn't display by default
+// Ensure modal doesn't display by default.
 document.getElementById("modal").style.display = "none";
 
-// Close modal when clicking outside content
+// Close modal when clicking outside content.
 document.getElementById("modal").addEventListener("click", (e) => {
   if (e.target === document.getElementById("modal")) {
     closeModal();
   }
 });
-
 
 // THREE.js Animation Logic (unchanged)
 const container = document.getElementById('animation-container');
@@ -238,7 +266,7 @@ if (container) {
 
   animate();
 
-  // Adjust renderer size and camera aspect ratio on window resize
+  // Adjust renderer size and camera aspect ratio on window resize.
   window.addEventListener('resize', () => {
     const width = container.offsetWidth;
     const height = container.offsetHeight;
@@ -247,7 +275,6 @@ if (container) {
     camera.updateProjectionMatrix();
   });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);

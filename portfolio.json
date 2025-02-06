@@ -1,6 +1,7 @@
 [
   {
     "id": "assassins-creed",
+    "section": "section",
     "title": "Assassin's Creed Hexe",
     "subtitle": "Sound Redesign",
     "image": "img/assassins-creed-hexe-detail.png",
@@ -20,6 +21,7 @@
 
   {
     "id": "insania",
+    "section": "section",
     "title": "Insania",
     "subtitle": "Point and Click Game",
     "image": "img/Thumbnail_First.png",
@@ -41,6 +43,7 @@
 
   {
     "id": "iceage",
+    "section": "section",
     "title": "IceAge",
     "subtitle": "2.5D Platformer",
     "image": "img/IceAge_Thumbnail.png",
@@ -62,6 +65,7 @@
   
   {
     "id": "dads-day-out",
+    "section": "section",
     "title": "Dad’s Day Out",
     "subtitle": "Serious Game",
     "image": "img/dads-day-out-thumbnail.png",
@@ -79,6 +83,115 @@
       ],
       "link": "https://www.dailymotion.com/video/kifXWcG8k2ThKDCmuaE"
     }
-  }  
+  },
+
+  {
+    "id": "light-logic",
+    "section": "section2",
+    "title": "Light Logic",
+    "subtitle": "Physics-Based Puzzle Game",
+    "image": "img/Light_Logic_Thuhmbnail.png",
+    "details": {
+      "portfolioPiece": "Physics-Based Puzzle Game",
+      "description": "Light Logic is a physics-based puzzle game focused on manipulating light to solve challenges using optical elements like mirrors, prisms, lenses, and filters. Players must strategically place and adjust these elements to guide light beams toward targets while overcoming obstacles and progressively complex level designs.\n\nThe game is structured across three stages, each introducing new mechanics that enhance problem-solving and spatial reasoning. Real-world physics principles, including Snell’s Law and the Law of Reflection, were implemented to ensure realistic light behavior. Phydemo was used to prototype light physics, refining mechanics for an intuitive and engaging experience.\n\nThis project combines technical research, level design, and gameplay mechanics, delivering an interactive and immersive puzzle experience that challenges players to think critically about light and optics.",
+      "year": 2023,
+      "skills": ["Game Design", "Level Design", "Technical Research", "Phydemo", "Prototyping"],
+      "media": [
+        { "type": "video", "src": "https://www.dailymotion.com/video/kuEOYPRDVVwjsUCnBT4" },
+        { "type": "image", "src": "img/Sandbox.png" },
+        { "type": "image", "src": "img/Prototype.png" }
+      ],
+      "link": "https://www.dailymotion.com/video/kuEOYPRDVVwjsUCnBT4"
+    }
+  },
+  
+  {
+    "id": "sound-reactive-record-collection",
+    "section": "section2",
+    "title": "Sound Reactive Record Collection",
+    "subtitle": "DIY Interactive Lighting",
+    "image": "img/Led_Lights_3.png",
+    "details": {
+      "portfolioPiece": "DIY Interactive Lighting",
+      "description": "A custom-built sound-reactive lighting system designed to enhance a personal record collection with interactive LED effects. The project integrates an ESP32 microcontroller, WLED firmware, and an analog microphone to sync LED visuals with audio, creating a dynamic and immersive ambiance.\n\nThe system uses a 12V WS2815 LED strip, powered via a 220V to 12V transformer, with sound-reactive features that adjust brightness and color based on detected frequency and amplitude variations. WAGO connectors and breadboard cables facilitated rapid prototyping, while the Arduino IDE was used for firmware iteration and fine-tuning.\n\nThis project merges electronics, programming, and creative lighting design, demonstrating a hands-on approach to interactive installations.",
+      "year": 2024,
+      "skills": [
+        "Prototyping",
+        "Input/Output",
+        "Electronics",
+        "ESP32",
+        "WLED",
+        "Arduino IDE"
+      ],
+      "media": [
+        { "type": "video", "src": "https://youtube.com/embed/s4DVwpICy7M?si=2VqkBBV1H623e3IP" },
+        { "type": "video", "src": "https://www.youtube.com/watch?v=1r0YRReuIcQ" },
+        { "type": "image", "src": "img/Led_Lights_3.png" },
+        { "type": "image", "src": "img/Led_Lights_4.png" },
+        { "type": "image", "src": "img/Led_Lights_5.png" }
+      ],
+      "link": "https://www.linkedin.com/posts/ivankgeorgiev_techdetails-wled-esp32-activity-7235286800859099136-S_aq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHVedUBm8I2W3dpWymFkPu9Lo6QZlwqVIg"
+    }
+  },
+
+  {
+    "id": "plethora-of-game-sounds",
+    "section": "section2",
+    "title": "Plethora Of Game Sounds",
+    "subtitle": "Sound Library",
+    "image": "img/Game_Sound_Library_Thumbnail.png",
+    "details": {
+      "portfolioPiece": "Sound Library",
+      "description": "Plethora of Game Sounds is a meticulously crafted sound library designed for game developers, offering 146 high-quality sound effects in both WAV and OGG Vorbis formats. The collection is divided into three main categories—Ambience, Foley, and Synthesized—providing a versatile selection of sounds for various game environments.\n\nTo ensure efficient workflow, the asset list was structured using the Universal Category System, allowing for clear organization and easy implementation. Sounds were created through a blend of foley recording (using a Rode NTG3, Zoom H5, Rode NT-1A) and sound synthesis (using Ableton Live 11, Phase Plant, and Serum). Metadata was refined using MP3Tag, ensuring accessibility and proper categorization.\n\nPublished on itch.io, this library delivers studio-quality audio assets ranging from atmospheric ambiences to detailed foley and synthesized game effects, all formatted for seamless integration into interactive experiences.",
+      "year": 2024,
+      "skills": [
+        "Sound Design",
+        "Foley Recording",
+        "Sound Synthesis",
+        "Metadata Management",
+        "Audio Editing",
+        "Ableton Live 11",
+        "Phase Plant",
+        "Novum",
+        "Serum",
+        "ShaperBox3",
+        "MP3Tag"
+      ],
+      "media": [
+        { "type": "image", "src": "img/Game_Sound_Library.png" },
+        { "type": "image", "src": "img/Asset_List.png" },
+        { "type": "image", "src": "img/Recording.jpg" }
+      ],
+      "link": "https://heta04.itch.io/plethora-of-game-sounds"
+    }
+  },
+  
+  {
+    "id": "green-gaming-paper",
+    "section": "section2",
+    "title": "Green Gaming Paper",
+    "subtitle": "Research & Industry Report",
+    "image": "img/Green_Gaming_Paper_Thumbnail.png",
+    "details": {
+      "portfolioPiece": "Research & Industry Report",
+      "description": "The Green Gaming Paper is an in-depth industry report exploring Ecogames and sustainable game development practices. Developed collaboratively by a team of 55 students, the paper analyzes how video games incorporate environmental themes and how the industry can adopt greener production methods.\n\nContributions to the paper include writing the Ecogames – Representation in Games chapter, compiling and refining a dataset of researched games, and creating data visualizations using Tableau and R to highlight global trends in ecogame development. Additionally, contributions to the Green Game Production – Good Practices chapter involved structuring and editing research on sustainable game development, ensuring clarity and alignment with the paper’s goals.\n\nThis project provides insights into how games can be both a platform for environmental awareness and an industry striving for sustainability.",
+      "year": 2024,
+      "skills": [
+        "Data Analysis",
+        "Research",
+        "Writing",
+        "Visualization (Tableau, R)",
+        "Editing"
+      ],
+      "media": [
+        { "type": "image", "src": "img/Green_Gaming_Paper_Thumbnail.png" },
+        { "type": "image", "src": "img/Green_Paper_1.png" },
+        { "type": "image", "src": "img/Green_Paper_2.png" },
+        { "type": "image", "src": "img/Green_Paper_3.png" }
+      ],
+      "link": "https://www.linkedin.com/posts/ivankgeorgiev_sustainability-gamedevelopment-research-activity-7293268305325256704-k5D2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHVedUBm8I2W3dpWymFkPu9Lo6QZlwqVIg"
+    }
+  }
+  
 ]
 
