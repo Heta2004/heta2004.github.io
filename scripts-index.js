@@ -45,21 +45,3 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
   }
 });
-
-const typedElement = document.querySelector(".typed-me");
-
-new Typed(".typed-me", {
-  strings: [
-    "Technical Sound Designer",
-    "Sound Designer",
-    "Game Designer"
-  ],
-  typeSpeed: 50,
-  backSpeed: 50,
-  backDelay: 500,
-  loop: true,
-  preStringTyped: () => {
-    // Add a non-breaking space when switching strings
-    typedElement.innerHTML = "&nbsp;";
-  },
-});
