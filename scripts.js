@@ -287,3 +287,72 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add an event listener for window resize
   window.addEventListener("resize", toggleFooterRight);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.body.getAttribute("data-page") === "home") {
+    const grid = document.querySelector(".highlights-grid");
+    if (!grid) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "audio-inline";
+    wrap.style.gridColumn = "1 / -1";
+
+    const title = document.createElement("h3");
+    title.textContent = "WORLDCLASSBCN RADIO EXERCISE";
+
+    // === PLAYER LAYOUT ===
+    const layout = document.createElement("div");
+    layout.className = "audio-player-layout";
+
+    const controls = document.createElement("div");
+    controls.className = "audio-controls";
+
+    const playBtn = document.createElement("button");
+    playBtn.className = "wave-btn";
+    playBtn.textContent = "▶";
+
+    const volume = document.createElement("input");
+    volume.type = "range";
+    volume.min = "0";
+    volume.max = "1";
+    volume.step = "0.01";
+    volume.value = "1";
+    volume.className = "wave-volume";
+
+    const waveform = document.createElement("div");
+    waveform.id = "waveform";
+
+    controls.appendChild(playBtn);
+    controls.appendChild(volume);
+    layout.appendChild(controls);
+    layout.appendChild(waveform);
+    wrap.appendChild(title);
+    wrap.appendChild(layout);
+    grid.appendChild(wrap);
+
+    // === WAVESURFER ===
+    const wavesurfer = WaveSurfer.create({
+      container: waveform,
+      url: "audio/Estudio_De_Radio_Cut.ogg",
+      waveColor: "#cccccc",
+      progressColor: "#5B1515",
+      cursorColor: "#5B1515",
+      barWidth: 2,
+      height: 90,
+      normalize: true,
+      responsive: true,
+    });
+
+    // === Controls ===
+    playBtn.addEventListener("click", () => {
+      wavesurfer.playPause();
+      playBtn.textContent = wavesurfer.isPlaying() ? "⏸" : "▶";
+    });
+
+    volume.addEventListener("input", (e) => {
+      wavesurfer.setVolume(parseFloat(e.target.value));
+    });
+
+    wavesurfer.on("finish", () => (playBtn.textContent = "▶"));
+  }
+});

@@ -52,10 +52,7 @@ new Typed(".typed-me", {
   strings: [
     "Technical Sound Designer",
     "Sound Designer",
-    "Audio Quality Assurance",
-    "Game Designer",
-    "UI/UX Designer",
-    "Data Analyst"
+    "Game Designer"
   ],
   typeSpeed: 50,
   backSpeed: 50,
