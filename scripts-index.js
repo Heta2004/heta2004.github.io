@@ -1,6 +1,24 @@
+// Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
+  // Keep checking until both Typed.js and WaveSurfer.js are loaded
+  function waitForLibraries() {
+    if (window.Typed && window.WaveSurfer) {
+      console.log("✅ Typed.js and WaveSurfer loaded successfully!");
+      initPageScripts();
+    } else {
+      console.log("⏳ Waiting for Typed.js and WaveSurfer...");
+      setTimeout(waitForLibraries, 100); // retry every 100ms
+    }
+  }
+
+  waitForLibraries();
+});
+
+// Main initialization function (runs once libraries are ready)
+function initPageScripts() {
   const typedElement = document.querySelector(".typed-me");
 
+  // === CUSTOM TYPING EFFECT ===
   if (typedElement) {
     const strings = [];
     let i = 0;
@@ -44,4 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeEffect();
   }
-});
+
+  // === OPTIONAL: LOG CONFIRMATION ===
+  console.log("✅ initPageScripts() finished without errors.");
+}
