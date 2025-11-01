@@ -289,91 +289,118 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.body.getAttribute("data-page") === "home") {
-    const grid = document.querySelector(".highlights-grid");
-    if (!grid) return;
+  if (document.body.getAttribute("data-page") !== "home") return;
 
-    const wrap = document.createElement("div");
-    wrap.className = "audio-inline";
-    wrap.style.gridColumn = "1 / -1";
+  const grid = document.querySelector(".highlights-grid");
+  if (!grid) return;
 
-    const title = document.createElement("h3");
-    title.textContent = "WORLDCLASSBCN RADIO EXERCISE";
+  const wrap = document.createElement("div");
+  wrap.className = "audio-inline";
+  wrap.style.gridColumn = "1 / -1";
 
-    const layout = document.createElement("div");
-    layout.className = "audio-player-layout";
+  const title = document.createElement("h3");
+  title.textContent = "WORLDCLASSBCN RADIO EXERCISE";
 
-    const controls = document.createElement("div");
-    controls.className = "audio-controls";
+  const layout = document.createElement("div");
+  layout.className = "audio-player-layout";
 
-    const playBtn = document.createElement("button");
-    playBtn.className = "wave-btn";
-    playBtn.textContent = "▶";
+  const controls = document.createElement("div");
+  controls.className = "audio-controls";
 
-    const volume = document.createElement("input");
-    volume.type = "range";
-    volume.min = "0";
-    volume.max = "1";
-    volume.step = "0.01";
-    volume.value = "1";
-    volume.className = "wave-volume";
+  const playBtn = document.createElement("button");
+  playBtn.className = "wave-btn";
+  playBtn.textContent = "▶";
 
-    const waveform = document.createElement("div");
-    waveform.id = "waveform";
+  const volume = document.createElement("input");
+  volume.type = "range";
+  volume.min = "0";
+  volume.max = "1";
+  volume.step = "0.01";
+  volume.value = "1";
+  volume.className = "wave-volume";
 
-    controls.appendChild(playBtn);
-    controls.appendChild(volume);
-    layout.appendChild(controls);
-    layout.appendChild(waveform);
-    wrap.appendChild(title);
-    wrap.appendChild(layout);
-    grid.appendChild(wrap);
+  const waveform = document.createElement("div");
+  waveform.id = "waveform";
 
-    // === Detect if mobile ===
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  controls.appendChild(playBtn);
+  controls.appendChild(volume);
+  layout.appendChild(controls);
+  layout.appendChild(waveform);
+  wrap.appendChild(title);
+  wrap.appendChild(layout);
+  grid.appendChild(wrap);
 
-    // === Initialize Wavesurfer (draw waveform, but don’t play on mobile) ===
-    const wavesurfer = WaveSurfer.create({
-      container: waveform,
-      url: "audio/Estudio_De_Radio_Cut.mp3",
-      waveColor: "#cccccc",
-      progressColor: "#5B1515",
-      cursorColor: "#5B1515",
-      barWidth: 2,
-      height: 90,
-      normalize: true,
-      responsive: true,
-      backend: isMobile ? "MediaElement" : "WebAudio", // draw safely on iOS
-    });
+  const AUDIO_URL = "audio/Estudio_De_Radio_Cut.mp3";
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    // === Controls ===
-    playBtn.addEventListener("click", async () => {
-      try {
-        // Mobile: ensure context is resumed after user gesture
-        if (isMobile && wavesurfer.backend.media) {
-          const audioEl = wavesurfer.backend.media;
-          if (audioEl.paused) {
-            await audioEl.play();
-            playBtn.textContent = "⏸";
-          } else {
-            audioEl.pause();
-            playBtn.textContent = "▶";
-          }
-        } else {
-          // Desktop – normal Wavesurfer flow
-          wavesurfer.playPause();
-          playBtn.textContent = wavesurfer.isPlaying() ? "⏸" : "▶";
-        }
-      } catch (err) {
-        console.warn("Playback blocked or failed:", err);
+  // Initialize Wavesurfer
+  const wavesurfer = WaveSurfer.create({
+    container: waveform,
+    url: AUDIO_URL,
+    waveColor: "#cccccc",
+    progressColor: "#5B1515",
+    cursorColor: "#5B1515",
+    barWidth: 2,
+    height: 90,
+    normalize: true,
+    responsive: true,
+    backend: isIOS ? "MediaElement" : "WebAudio",
+  });
+
+  let unlocked = false;
+
+  // === Unlock Audio Context for iOS ===
+  function unlockAudioContext() {
+    if (unlocked) return;
+
+    try {
+      const ctx = wavesurfer.backend?.ac;
+      if (ctx && ctx.state === "suspended") {
+        ctx.resume().then(() => {
+          unlocked = true;
+          console.log("✅ Audio context unlocked");
+        });
+      } else {
+        unlocked = true;
       }
-    });
-
-    // Volume control
-    volume.addEventListener("input", (e) => {
-      wavesurfer.setVolume(parseFloat(e.target.value));
-    });
-
-    wavesurfer.on("finish", () => (playBtn.textContent = "▶"));
+    } catch (err) {
+      console.warn("⚠️ Audio context unlock failed:", err);
+    }
   }
+
+  // Required for iOS Safari — ensure a user gesture
+  ["touchstart", "click"].forEach((evt) => {
+    document.body.addEventListener(evt, unlockAudioContext, { once: true });
+  });
+
+  // === Controls ===
+  playBtn.addEventListener("click", async () => {
+    try {
+      unlockAudioContext();
+
+      if (isIOS && wavesurfer.backend.media) {
+        // Directly control HTMLAudioElement for iOS
+        const audioEl = wavesurfer.backend.media;
+        if (audioEl.paused) {
+          await audioEl.play();
+          playBtn.textContent = "⏸";
+        } else {
+          audioEl.pause();
+          playBtn.textContent = "▶";
+        }
+      } else {
+        // Desktop & Android normal flow
+        wavesurfer.playPause();
+        playBtn.textContent = wavesurfer.isPlaying() ? "⏸" : "▶";
+      }
+    } catch (err) {
+      console.warn("⚠️ Playback failed:", err);
+    }
+  });
+
+  volume.addEventListener("input", (e) => {
+    wavesurfer.setVolume(parseFloat(e.target.value));
+  });
+
+  wavesurfer.on("finish", () => (playBtn.textContent = "▶"));
 });
