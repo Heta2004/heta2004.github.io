@@ -300,7 +300,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.createElement("h3");
     title.textContent = "WORLDCLASSBCN RADIO EXERCISE";
 
-    // === PLAYER LAYOUT ===
     const layout = document.createElement("div");
     layout.className = "audio-player-layout";
 
@@ -330,7 +329,10 @@ document.addEventListener("DOMContentLoaded", () => {
     wrap.appendChild(layout);
     grid.appendChild(wrap);
 
-    // === WAVESURFER ===
+    // === Detect if mobile ===
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    // === Initialize Wavesurfer (draw waveform, but don’t play on mobile) ===
     const wavesurfer = WaveSurfer.create({
       container: waveform,
       url: "audio/Estudio_De_Radio_Cut.ogg",
@@ -341,14 +343,33 @@ document.addEventListener("DOMContentLoaded", () => {
       height: 90,
       normalize: true,
       responsive: true,
+      backend: isMobile ? "MediaElement" : "WebAudio", // draw safely on iOS
     });
 
     // === Controls ===
-    playBtn.addEventListener("click", () => {
-      wavesurfer.playPause();
-      playBtn.textContent = wavesurfer.isPlaying() ? "⏸" : "▶";
+    playBtn.addEventListener("click", async () => {
+      try {
+        // Mobile: ensure context is resumed after user gesture
+        if (isMobile && wavesurfer.backend.media) {
+          const audioEl = wavesurfer.backend.media;
+          if (audioEl.paused) {
+            await audioEl.play();
+            playBtn.textContent = "⏸";
+          } else {
+            audioEl.pause();
+            playBtn.textContent = "▶";
+          }
+        } else {
+          // Desktop – normal Wavesurfer flow
+          wavesurfer.playPause();
+          playBtn.textContent = wavesurfer.isPlaying() ? "⏸" : "▶";
+        }
+      } catch (err) {
+        console.warn("Playback blocked or failed:", err);
+      }
     });
 
+    // Volume control
     volume.addEventListener("input", (e) => {
       wavesurfer.setVolume(parseFloat(e.target.value));
     });
