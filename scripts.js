@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // === Initialize Wavesurfer (draw waveform, but don’t play on mobile) ===
     const wavesurfer = WaveSurfer.create({
       container: waveform,
-      url: "audio/Estudio_De_Radio_Cut.ogg",
+      url: "audio/Estudio_De_Radio_Cut.mp3",
       waveColor: "#cccccc",
       progressColor: "#5B1515",
       cursorColor: "#5B1515",
